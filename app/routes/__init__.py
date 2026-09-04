@@ -1,0 +1,1 @@
+"""Routes package. Each model defines a blueprint in app/__init__.py"""
