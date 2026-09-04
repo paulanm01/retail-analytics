@@ -1,0 +1,24 @@
+# Virtual environment and Python bytecode
+venv/
+__pycache__/
+*.pyc
+
+# Credentials — never versioned
+.env
+
+# Original dataset (~45 MB, downloaded from UCI)
+data/*.xlsx
+
+# Test cache and Flask instance folder
+.pytest_cache/
+instance/
+
+# Local editor settings
+.vscode/
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# Power BI temporary files
+dashboard/*.tmp

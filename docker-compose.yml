@@ -1,0 +1,25 @@
+# PostgreSQL 16 for local development.
+# Credentials are read from the .env file, which is not versioned.
+# Start with: docker compose up -d
+
+services:
+  db:
+    image: postgres:16
+    container_name: retail_postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+
+    ports:
+      # host:container — the host port avoids clashing with a local
+      # PostgreSQL installation already using the default 5432.
+      - "${DB_PORT}:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
